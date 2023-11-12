@@ -1,0 +1,34 @@
+<mat-toolbar color="primary">
+    <button mat-icon-button class="icon" aria-label="Sidebar" (click)="showSidebar = !showSidebar">
+        <mat-icon>more_vert</mat-icon>
+    </button>
+    <span>Gestion des devoirs</span>
+    <span class="spacer"></span>
+    <div class="right-toolbar-content">
+        <button mat-icon-button class="icon" aria-label="Maison">
+            <mat-icon>Acceuil</mat-icon>
+        </button>
+        <button mat-icon-button class="icon" aria-label="Identification">
+            <mat-icon>Identification</mat-icon>
+        </button>
+    </div>
+</mat-toolbar>
+<mat-drawer-container class="container">
+    <mat-drawer #drawer class="sidenav" [opened]="showSidebar">
+        <ul>
+            <li><a mat-button routerLink="/liste_devoir">Liste des devoirs</a></li>
+            <li><a mat-button routerLink="/ajout_devoir">Ajout d'un devoir</a></li>
+            <li><a mat-button routerLink="/modif_devoir">Modification d'un devoir</a></li>
+            <li><a mat-button routerLink="/supp_devoir">Suppression d'un devoir</a></li>
+            <li><a mat-button routerLink="/generation_donnees_test">Génération des données de test</a></li>
+        </ul>
+    </mat-drawer>
+
+    <mat-drawer-content class="content">
+        <h1>
+            <nav><a routerLink="/home">{{title}}</a></nav>
+        </h1>
+        <router-outlet></router-outlet>
+        <app-assignments></app-assignments>
+    </mat-drawer-content>
+</mat-drawer-container>

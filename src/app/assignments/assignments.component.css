@@ -1,0 +1,25 @@
+.rendu {
+    color: green;
+    border: 1px solid green;
+    background-color: yellow;
+}
+
+.nonRendu {
+    color: red;
+    border: 1px solid red;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ajouterBtn {
+    align-self: center;
+}
+
+mat-list {
+    border: 3px solid;
+    min-width: 70%;
+}
