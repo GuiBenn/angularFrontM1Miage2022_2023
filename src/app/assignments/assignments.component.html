@@ -1,15 +1,8 @@
 <!--<main class="container" *ngIf="!formVisible">-->
 <main class="container">
-    <!--<button class="ajouterBtn" mat-flat-button color="primary"
-        (click)="onAddAssignmentBtnClick()">
-        Ajouter Devoir
-    </button>
--->
     <div class="ajouterBtn">
         <a routerLink="/add">
-            <button class="ajouterBtn"
-                    mat-flat-button color="primary"
-                    (click)="onAddAssignmentBtnClick()">
+            <button class="ajouterBtn" mat-flat-button color="primary">
                 Ajouter Devoir
             </button>
         </a>
@@ -18,10 +11,11 @@
         <nav>
             <a routerLink="/assignment/{{assignment.id}}">
                 <h3 mat subheader>{{assignment.dateDeRendu | date }}</h3>
-                <mat-list-item (click)="assignmentClique(assignment)">
+                <mat-list-item>
                     <p appRendu *ngIf="assignment.rendu; else nonsoumis">
                         Devoir intitulé {{assignment.nom}} a été rendu.
                     </p>
+                    <mat-divider></mat-divider>
                     <ng-template #nonsoumis>
                         Le devoir {{assignment.nom}} n'a pas été rendu.
                     </ng-template>
@@ -29,10 +23,11 @@
                 </mat-list-item>
             </a>
         </nav>
-        <h3 mat subheader>{{assignment.dateDeRendu | date }}</h3>
     </mat-list>
-    <!--<app-assignment-detail [assignmentTransmis]="assignmentSelectionne"></app-assignment-detail>-->
 </main>
+<!-- (click)="onAddAssignmentBtnClick()" dans le 12-->
+<!--(click)="assignmentClique(assignment)" dans mat list item 21-->
+<!--<app-assignment-detail [assignmentTransmis]="assignmentSelectionne"></app-assignment-detail>-->
 <!--
 <app-add-assignment *ngIf="formVisible" (nouvelAssignment)="onNouvelAssignment($event)"></app-add-assignment>
 -->

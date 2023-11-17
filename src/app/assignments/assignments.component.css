@@ -1,25 +1,30 @@
-.rendu {
-    color: green;
-    border: 1px solid green;
-    background-color: yellow;
-}
-
-.nonRendu {
-    color: red;
-    border: 1px solid red;
-}
-
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .ajouterBtn {
-    align-self: center;
+  align-self: center;
 }
 
 mat-list {
-    border: 3px solid;
-    min-width: 70%;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin: 16px 0;
+}
+
+mat-list-item {
+  padding: 16px;
+  border-bottom: 1px solid #ddd;
+}
+
+h3 {
+  margin-bottom: 8px;
+}
+
+.rendu,
+.nonRendu {
+  padding: 8px;
+  border-radius: 4px;
+  margin-right: 8px;
 }

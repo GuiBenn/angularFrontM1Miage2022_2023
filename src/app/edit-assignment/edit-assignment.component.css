@@ -1,0 +1,35 @@
+.container {
+    max-width: 600px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+mat-form-field {
+    margin-bottom: 16px;
+    width: 100%;
+}
+
+mat-label {
+    font-size: 14px;
+}
+
+mat-datepicker-toggle {
+    margin-top: 8px;
+}
+
+button {
+    align-self: flex-end;
+    margin-top: 16px;
+}

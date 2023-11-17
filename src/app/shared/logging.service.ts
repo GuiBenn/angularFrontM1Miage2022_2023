@@ -8,6 +8,6 @@ export class LoggingService {
   constructor() { }
 
   log(assignmentName, action) {
-    console.log("Assignment " + assignmentName + " " + action );
+    console.log("Assignment " + assignmentName + " is " + action);
   }
 }

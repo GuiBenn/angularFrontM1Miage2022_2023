@@ -5,10 +5,9 @@ import { Directive, ElementRef } from '@angular/core';
 })
 export class RenduDirective {
 
-  constructor(el:ElementRef) {
+  constructor(el: ElementRef) {
     el.nativeElement.style.color = 'green';
     el.nativeElement.style.border = '1px dashed green';
     el.nativeElement.style.backgroundColor = 'yellow';
-   }
-
+  }
 }

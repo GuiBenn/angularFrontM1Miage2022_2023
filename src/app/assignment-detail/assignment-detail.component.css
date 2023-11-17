@@ -1,5 +1,21 @@
+mat-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 16px;
+}
+
+mat-card-content {
+    margin: 16px;
+}
+
+mat-card-title,
+mat-card-subtitle {
+    margin-bottom: 8px;
+}
+
 #bottom {
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
 }

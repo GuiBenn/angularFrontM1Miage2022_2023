@@ -8,18 +8,14 @@ import { AssignmentsService } from '../shared/assignments.service';
   styleUrls: ['./assignments.component.css']
 })
 
-export class AssignmentsComponent implements OnInit{
-  titre = "Mon application sur les Assignments !"
-  ajoutActive = false;
-  formVisible = false;
-  assignmentSelectionne!:Assignment;
-  assignments!: Assignment[];
+export class AssignmentsComponent implements OnInit {
+  //titre = "Mon application sur les Assignments !"
+  //ajoutActive = false;
+  //formVisible = false;
+  //assignmentSelectionne!:Assignment;
+  assignments: Assignment[];
 
-  assignmentClique(assignment:Assignment) {
-    this.assignmentSelectionne = assignment;
-  }
-
-  constructor(private assignmentService:AssignmentsService) { }
+  constructor(private assignmentService: AssignmentsService) { }
 
   ngOnInit(): void {
     //this.assignments = this.assignmentService.getAssignments();
@@ -30,19 +26,27 @@ export class AssignmentsComponent implements OnInit{
   }
 
   getAssignments() {
-    this.assignmentService.getAssignments().subscribe(assignments => this.assignments = assignments);
+    this.assignmentService.getAssignments()
+      .subscribe((assignments) => {
+        this.assignments = assignments
+      });
   }
 
-  onAddAssignmentBtnClick() {
-    //this.formVisible = true;
-  }
-/*
-  onNouvelAssignment(event:Assignment) {
-    //this.assignments.push(event);
-    this.assignmentService.addAssignment(event).subscribe(message => console.log(message));
-    this.formVisible = false;
-
-  }
-*/
+  /*
+    onAddAssignmentBtnClick() {
+      //this.formVisible = true;
+    }
   
+    assignmentClique(assignment:Assignment) {
+      this.assignmentSelectionne = assignment;
+    } 
+  
+    onNouvelAssignment(event:Assignment) {
+      //this.assignments.push(event);
+      this.assignmentService.addAssignment(event).subscribe(message => console.log(message));
+      //this.formVisible = false;
+  
+    }
+  */
+
 }

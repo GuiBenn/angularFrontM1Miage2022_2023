@@ -5,30 +5,36 @@
     <span>Gestion des devoirs</span>
     <span class="spacer"></span>
     <div class="right-toolbar-content">
-        <button mat-icon-button class="icon" aria-label="Maison">
-            <mat-icon>Acceuil</mat-icon>
+        <button mat-icon-button routerLink="/home">
+            <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home">Acceuil</mat-icon>
         </button>
-        <button mat-icon-button class="icon" aria-label="Identification">
-            <mat-icon>Identification</mat-icon>
-        </button>
+        <div class="container">
+            <div *ngIf="!authService.isLogged()">
+                <button mat-raised-button color="warn" (click)="showLoginForm()">Connexion</button>
+            </div>
+
+            <app-login-form *ngIf="showSidebar"></app-login-form>
+        </div>
     </div>
 </mat-toolbar>
+
 <mat-drawer-container class="container">
     <mat-drawer #drawer class="sidenav" [opened]="showSidebar">
         <ul>
-            <li><a mat-button routerLink="/liste_devoir">Liste des devoirs</a></li>
-            <li><a mat-button routerLink="/ajout_devoir">Ajout d'un devoir</a></li>
-            <li><a mat-button routerLink="/modif_devoir">Modification d'un devoir</a></li>
-            <li><a mat-button routerLink="/supp_devoir">Suppression d'un devoir</a></li>
+            <li><a mat-button routerLink="/home">Liste des devoirs</a></li>
+            <li><a mat-button routerLink="/add">Ajout d'un devoir</a></li>
+            <li><a mat-button routerLink="/home">Modification d'un devoir</a></li>
+            <li><a mat-button routerLink="/home">Suppression d'un devoir</a></li>
             <li><a mat-button routerLink="/generation_donnees_test">Génération des données de test</a></li>
         </ul>
     </mat-drawer>
 
     <mat-drawer-content class="content">
+
         <h1>
-            <nav><a routerLink="/home">{{title}}</a></nav>
+            <nav><a routerLink="/home" class="title">{{title}}</a></nav>
         </h1>
+
         <router-outlet></router-outlet>
-        <app-assignments></app-assignments>
     </mat-drawer-content>
 </mat-drawer-container>

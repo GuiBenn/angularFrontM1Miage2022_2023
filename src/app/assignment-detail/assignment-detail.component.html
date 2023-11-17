@@ -1,18 +1,24 @@
 <div class="container">
     <mat-card *ngIf="assignmentTransmis">
-        <mat-card-title>
-            {{assignmentTransmis.nom}}
-        </mat-card-title>
-        <mat-card-subtitle>
-            {{assignmentTransmis.dateDeRendu | date}}
-        </mat-card-subtitle>
-        <mat-checkbox *ngIf="!assignmentTransmis.rendu"
-                (click)="onAssignmentRendu()"
-        >
-            Devoir rendu
-        </mat-checkbox>
-        <button mat-raised-button color="warn" (click)="onDelete()">
-            DELETE ME 
-        </button>
+        <mat-card-content>
+            <mat-card-title>
+                {{assignmentTransmis.nom}}
+            </mat-card-title>
+            <mat-card-subtitle>
+                {{assignmentTransmis.dateDeRendu | date}}
+            </mat-card-subtitle>
+            <div id="bottom">
+                <mat-checkbox *ngIf="!assignmentTransmis.rendu" (click)="onAssignmentRendu()">
+                    Devoir rendu
+                </mat-checkbox>
+                <button mat-raised-button color="primary" (click)="onClickEdit()" [disabled]="!isAdmin()">
+                    EDIT
+                </button>
+                <button mat-raised-button color="warn" (click)="onDelete()" [disabled]="!isAdmin()">
+                    DELETE ME
+                </button>
+            </div>
+        </mat-card-content>
+
     </mat-card>
 </div>
